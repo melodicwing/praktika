@@ -6,9 +6,6 @@
 	<body>
 		<div class="container-fluid">
 			<nav class="navbar navbar-inverse">
-				<div class="navbar-header">
-					<a class="navbar-brand">Админка</a>
-				</div>
 				<div>
 					<ul class="nav navbar-nav">
 						<li {{ Request::is('/') ? ' class=active' : '' }}><a href="/">На основной сайт</a></li>

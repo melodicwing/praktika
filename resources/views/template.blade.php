@@ -6,9 +6,6 @@
 	<body>
 		<div class="container-fluid">
 			<nav class="navbar navbar-inverse">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="/">Практика</a>
-				</div>
 				<div>
 					<ul class="nav navbar-nav">
 						<li {{ Request::is('/') ? ' class=active' : '' }}><a href="/">Главная</a></li>
@@ -23,7 +20,7 @@
 								<li><a href="/interests#games">Игры</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Page 3</a></li>
+						<li><a href="/study">Учеба</a></li>
 					</ul>
 
 					@include('auth')
