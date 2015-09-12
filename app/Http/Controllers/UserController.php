@@ -26,4 +26,9 @@ class UserController extends Controller
 	{
 		return view('user/study');
 	}
+
+	function test()
+	{
+		return view('user/test');
+	}
 }
