@@ -41,11 +41,7 @@
 			@yield('content')
 
 		</div>
-		<br>
-		<br>
-		<div class="container-fluid">
-			@yield('footer', "<div class='panel-footer text-center'>© 2015 Лось Д.А.</div>")            
-		</div>
+		@yield('footer', "<footer class='footer'><div class='container-fluid'><p class='text-center'>© 2015 Лось Д.А.</p></div></footer>")
 	</body>
 </html>
 <script>

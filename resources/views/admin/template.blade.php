@@ -35,7 +35,7 @@
 		<br>
 		<br>
 		<div class="container-fluid">
-			@yield('footer', "<div class='panel-footer text-center'>© 2015 Лось Д.А.</div>")            
+			@yield('footer', "<footer class='footer'><p>© 2015 Лось Д.А.</p></footer>")
 		</div>
 	</body>
 </html>
