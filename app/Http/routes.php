@@ -22,7 +22,10 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
-//Route::post('auth/register', 'Auth\AuthController@postRegister');
-Route::post('auth/register', function(){
-	return 'sas';
-});
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+Route::post('ajax/check_login', 'Ajax@check_login');
+
+Route::get('admin', 'Admin@index');
+
+Route::get('interests', 'UserController@interests');

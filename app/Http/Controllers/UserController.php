@@ -16,4 +16,9 @@ class UserController extends Controller
 	{
 		return view('user/about_me');
 	}
+
+	function interests()
+	{
+		return view('user/interests');
+	}
 }

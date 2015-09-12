@@ -8,30 +8,18 @@
 		<link rel="stylesheet" href="/assets/css/mystyle.css">
 		<script src="/assets/js/jquery-2.1.4.min.js"></script>
 		<script src="/assets/js/bootstrap.min.js"></script>
-		<style>
-			ul.nav li.dropdown:hover ul.dropdown-menu {
-				display: block;
-			}
-		</style>
 	</head>
 	<body>
 		<div class="container-fluid">
 			<nav class="navbar navbar-inverse">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="/">Практика</a>
+					<a class="navbar-brand">Админка</a>
 				</div>
 				<div>
 					<ul class="nav navbar-nav">
-						<li {{ Request::is('/') ? ' class=active' : '' }}><a href="/">Главная</a></li>
+						<li {{ Request::is('/') ? ' class=active' : '' }}><a href="/">На основной сайт</a></li>
 						<li {{ Request::is('about_me') ? ' class=active' : '' }}><a href="/about_me">Обо мне</a></li>
-						<li class="dropdown {{ Request::is('interests') ? 'active' : '' }}">
-							<a href="/interests">Мои интересы<span class="caret"></span></a>
-							<ol class="dropdown-menu">
-								<li><a href="/interests#">Page 1-1</a></li>
-								<li><a href="/interests#">Page 1-2</a></li>
-								<li><a href="/interests#">Page 1-3</a></li>
-							</ol>
-						</li>
+						<li><a href="#">Page 2</a></li>
 						<li><a href="#">Page 3</a></li>
 					</ul>
 
