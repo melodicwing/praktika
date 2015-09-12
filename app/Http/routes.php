@@ -31,5 +31,5 @@ Route::get('admin', 'Admin@index');
 Route::get('interests', 'UserController@interests');
 
 Route::get('study', 'UserController@study');
-
 Route::get('study/test', 'UserController@test');
+Route::post('study/test/result', 'UserController@test_result');

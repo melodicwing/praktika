@@ -7,7 +7,8 @@
 	</h1>
 </div>
 <br>
-<form role="form" name='form' method="POST" action="mailto:sample_text@mlg.com" onsubmit="return validate_test()">
+<form role="form" name='form' method="POST" action="/study/test/result" onsubmit="return validate_test()">
+	{!! csrf_field() !!}
 	<div class='row center-block'>
 		<div class='col-xs-4 form-group'>
 			<p>Вопрос 1: Выберите оператор ветвления</p>

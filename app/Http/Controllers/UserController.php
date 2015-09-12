@@ -31,4 +31,9 @@ class UserController extends Controller
 	{
 		return view('user/test');
 	}
+
+	function test_result()
+	{
+		return view('user/test_result');
+	}
 }
