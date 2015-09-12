@@ -29,4 +29,44 @@ function updateTime(){
 	var s = checkTime(date.getSeconds());
 	$("#timeDiv").html(day + ", " + chislo + " " + month + " " + year + " г, " + h + ":" + m + ":" + s);
 	setTimeout("updateTime()", 1000);
-};
+}
+
+function validate_test()
+{
+	q1 = document.forms["form"]["question_1"].value;
+	q2 = document.forms["form"]["question_2"].value;
+	q3 = document.forms["form"]["question_3"].value;
+	
+	if (q1 == 0)
+	{
+		alert("ответьте на первый вопрос");
+		document.getElementById("q1").focus();
+		return false;
+	}
+	
+	if (q2.length == 0)
+	{
+		alert("ответьте на второй вопрос");
+		document.getElementById("q2").focus();
+		return false;
+	}
+	else
+	{
+		if(/\D+ \D+ \D+/.test(q2))
+		{
+			
+		}
+		else
+		{
+			alert("введите правильный ответ на второй вопрос");
+			document.getElementById("q2").focus();
+			return false;
+		}
+	}
+	
+	if (q3.length == 0)
+	{
+		alert("ответьте на третий вопрос");
+		return false;
+	}
+}
