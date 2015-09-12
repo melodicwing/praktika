@@ -12,7 +12,7 @@
 			<th rowspan="2" class="center">№</th>
 			<th rowspan="2" class="center">Дисциплина</th>
 			<th rowspan="2" class="center">Кафедра</th>
-			<th colspan="6" class="center">Всего часов</th>
+			<th colspan="6" class="center">Часы</th>
 		</tr>
 		<tr>
 			<th class="center">Всего</th>

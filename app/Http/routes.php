@@ -26,7 +26,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::post('ajax/check_login', 'Ajax@check_login');
 
-Route::get('admin', 'Admin@index');
+Route::get('admin', [ 'middleware' => 'routeadmin', 'uses' => 'Admin@index' ]);
 
 Route::get('interests', 'UserController@interests');
 
