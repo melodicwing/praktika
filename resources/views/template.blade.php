@@ -20,7 +20,8 @@
 								<li><a href="/interests#games">Игры</a></li>
 							</ul>
 						</li>
-						<li><a href="/study">Учеба</a></li>
+						<li {{ Request::is('study') ? ' class=active' : '' }}><a href="/study">Учеба</a></li>
+						<li {{ Request::is('gallery') ? ' class=active' : '' }}><a href="/gallery">Фотоальбом</a></li>
 					</ul>
 
 					@include('auth')
@@ -41,7 +42,13 @@
 			@yield('content')
 
 		</div>
-		@yield('footer', "<footer class='footer'><div class='container-fluid'><p class='text-center'>© 2015 Лось Д.А.</p></div></footer>")
+		@yield('footer', "
+			<footer class='footer'>
+				<div class='container-fluid'>
+					<p class='text-center'>© 2015 Лось Д.А.</p>
+				</div>
+			</footer>
+		")
 	</body>
 </html>
 <script>

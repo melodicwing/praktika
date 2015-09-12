@@ -64,4 +64,9 @@ class UserController extends Controller
 			}
 		}
 	}
+
+	function gallery()
+	{
+		return view('user/gallery');
+	}
 }

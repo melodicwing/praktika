@@ -9,26 +9,61 @@ ul.nav li.dropdown:hover ul.dropdown-menu {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+	position: relative;
+	min-height: 100%;
 }
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 80px;
+	/* Margin bottom by footer height */
+	margin-bottom: 80px;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 60px;
+	background-color: #f5f5f5;
 }
 footer .container-fluid {
-  width: auto;
-  max-width: 680px;
-  padding: 0 15px;
+	width: auto;
+	max-width: 680px;
+	padding: 0 15px;
 }
 footer .container-fluid p {
-  margin: 20px 0;
+	margin: 20px 0;
+}
+
+/* 5 cols
+-------------------------------------------------- */
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+	position: relative;
+	min-height: 1px;
+	/*padding-right: 10px;
+	padding-left: 10px;*/
+}
+
+.col-xs-5ths {
+	width: 20%;
+	float: left;
+}
+@media (min-width: 768px) {
+	.col-sm-5ths {
+		width: 20%;
+		float: left;
+	}
+}
+@media (min-width: 992px) {
+	.col-md-5ths {
+		width: 20%;
+		float: left;
+	}
+}
+@media (min-width: 1200px) {
+	.col-lg-5ths {
+		width: 20%;
+		float: left;
+	}
 }

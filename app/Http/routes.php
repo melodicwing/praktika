@@ -36,3 +36,5 @@ Route::post('study/test/result', 'UserController@test_result');
 Route::get('study/test/result', function(){
 	return redirect('study/test');
 });
+
+Route::get('gallery', 'UserController@gallery');
