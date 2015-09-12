@@ -13,6 +13,6 @@
 	@endif
 	<a href='/study/test'>Вернуться к тесту</a>
 	@if ( isset($from_model) )
-		<pre><?php var_dump($from_model) ?></pre>
+		<!-- <pre><?php var_dump($from_model) ?></pre> -->
 	@endif
 @endsection

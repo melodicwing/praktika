@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\User;
 use App\Http\Models\TestResult;
 use App\Http\Controllers\Controller;
@@ -32,7 +33,9 @@ class UserController extends Controller
 
 	function test()
 	{
-		return view('user/test');
+		$results = TestResult::get_results();
+
+		return view('user/test', [ 'results' => $results ]);
 	}
 
 	function test_result(Request $request)

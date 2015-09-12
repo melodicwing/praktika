@@ -49,4 +49,23 @@ class TestResult extends Model
 
 		return $arr;
 	}
+
+	public static function get_results()
+	{
+		$all_results = Auth::user() ? TestResult::all() : array();
+		$results = array();
+		if (!empty($all_results)) {
+			foreach ($all_results as $row) {
+				$temp = array();
+				$temp['user'] = ( $row->user_id == 666 ) ? 'Аноним' : User::find($row->user_id)->name;
+				$temp['when'] = $row->dateTime;
+				$temp['q1'] = $row->q1;
+				$temp['q2'] = $row->q2;
+				$temp['q3'] = $row->q3;
+				$temp['result'] = $row->result;
+				$results[] = $temp;
+			}
+		}
+		return $results;
+	}
 }

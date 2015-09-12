@@ -22,10 +22,10 @@ class CreateTestResultsTable extends Migration
 			$table->dateTime('dateTime');
 			$table->timestamps();
 
-			$table->foreign('user_id')
-				->references('id')->on('users')
-				->onDelete('cascade')
-				->onUpdate('cascade');
+			// $table->foreign('user_id')
+			// 	->references('id')->on('users')
+			// 	->onDelete('cascade')
+			// 	->onUpdate('cascade');
 		});
 	}
 
