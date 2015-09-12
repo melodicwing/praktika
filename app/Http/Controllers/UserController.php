@@ -74,4 +74,43 @@ class UserController extends Controller
 	{
 		return view('user/feedback');
 	}
+
+	function history()
+	{
+		$pages = Array(
+			'index' => array(
+				'link' => '/',
+				'name' => 'Главная страница',
+			),
+			'about_me' => array(
+				'link' => '/about_me',
+				'name' => 'Обо мне',
+			),
+			'interests' => array(
+				'link' => '/interests',
+				'name' => 'Мои интересы',
+			),
+			'study' => array(
+				'link' => '/study',
+				'name' => 'Учеба',
+			),
+			'test' => array(
+				'link' => '/study/test',
+				'name' => 'Тест',
+			),
+			'gallery' => array(
+				'link' => '/gallery',
+				'name' => 'Фотоальбом',
+			),
+			'feedback' => array(
+				'link' => '/feedback',
+				'name' => 'Обратная связь',
+			),
+			'history' => array(
+				'link' => '/history',
+				'name' => 'История',
+			),
+		);
+		return view('user/history', [ 'pages' => $pages ]);
+	}
 }

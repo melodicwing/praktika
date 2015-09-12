@@ -42,3 +42,5 @@ Route::get('study/test/result', function(){
 Route::get('gallery', 'UserController@gallery');
 
 Route::get('feedback', 'UserController@feedback');
+
+Route::get('history', 'UserController@history');

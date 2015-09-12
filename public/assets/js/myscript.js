@@ -70,3 +70,100 @@ function validate_test()
 		return false;
 	}
 }
+
+function init_all() {
+	$(document).ready(function(){
+		initTime();
+
+		//сохраняем в sessionStorage
+		var page_name = location.pathname.substring(location.pathname.lastIndexOf("/") + 1)
+		if (!page_name) {
+			page_name = 'index';
+		}
+
+		if(sessionStorage.getItem(page_name)) {
+			sessionStorage.setItem(page_name, Number(sessionStorage.getItem(page_name))+1);
+		} else {
+			sessionStorage.setItem(page_name, 1);
+		}
+		
+		//сохраняем куки
+		if(getCookie(page_name)) {
+			new Date(new Date().setYear(new Date().getFullYear() + 1))
+			setCookie(page_name, Number(getCookie(page_name))+1);
+		} else {
+			setCookie(page_name, 1);
+		}
+	});
+}
+
+//cookie кукисы cookie.js
+// возвращает cookie с именем name, если есть, если нет, то undefined
+function getCookie(name) {
+	if (!name) {
+		name = 'index';
+	}
+
+	//console.log(name);
+
+  var matches = document.cookie.match(new RegExp(
+	"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+// устанавливает cookie c именем name и значением value
+// options - объект с свойствами cookie (expires, path, domain, secure)
+function setCookie(name, value, options) {
+	if (!name) {
+		name = 'index';
+	}
+
+  options = options || {};
+
+  var expires = options.expires;
+
+ //  if (typeof expires == "number" && expires) {
+	// var d = new Date();
+	// d.setTime(d.getTime() + expires * 1000);
+	// expires = options.expires = d;
+ //  }
+ //  if (expires && expires.toUTCString) {
+	// options.expires = expires.toUTCString();
+ //  }
+ var date = new Date(new Date().setYear(new Date().getFullYear() + 1));
+ options.expires=date.toUTCString();
+
+  //console.log(options);
+
+  value = encodeURIComponent(value);
+
+  var updatedCookie = name + "=" + value;
+
+  for (var propName in options) {
+	updatedCookie += "; " + propName;
+	var propValue = options[propName];
+	if (propValue !== true) {
+	  updatedCookie += "=" + propValue;
+	}
+  }
+
+  document.cookie = updatedCookie;
+}
+
+// удаляет cookie с именем name
+function deleteCookie(name) {
+  setCookie(name, "", {
+	expires: -1
+  })
+}
+
+function history_update(pages) {
+	//console.log('history_update started');
+	for (var i = 0; i < pages.length; ++i) {
+		//console.log(pages[i]);
+		console.log('.page_'+pages[i]);
+		$('#page_'+pages[i]).children('.session').text(sessionStorage.getItem(pages[i]) || 0);
+		$('#page_'+pages[i]).children('.all').text(getCookie(pages[i]) || 0);
+	}
+}
