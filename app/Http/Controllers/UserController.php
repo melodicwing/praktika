@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 use Auth;
 use App\User;
 use App\Http\Models\TestResult;
+use App\Http\Models\Hit;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator;
 
 class UserController extends Controller
 {
+	function __construct()
+	{
+		Hit::update_hits();
+	}
+
 	function index()
 	{
 		return view('user/index');
