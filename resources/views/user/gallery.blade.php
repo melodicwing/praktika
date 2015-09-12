@@ -1,6 +1,7 @@
 @extends('template')
 
 @section('content')
+	<br>
 	<div class="row">
 		@for ($i = 1; $i <= 15; $i++)
 			@if ( ( ($i-1) % 5 ) == 0 )

@@ -69,4 +69,9 @@ class UserController extends Controller
 	{
 		return view('user/gallery');
 	}
+
+	function feedback()
+	{
+		return view('user/feedback');
+	}
 }

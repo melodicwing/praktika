@@ -12,6 +12,9 @@ class Ajax extends Controller
 	{
 		if ($request->isMethod('post')) {
 			$val = $request->input('login');
+			if ($val == '') {
+				return 'empty';
+			}
 			$res = User::all();
 			foreach ($res as $value) {
 				if ($val == $value->name) {

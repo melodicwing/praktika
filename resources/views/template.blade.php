@@ -22,6 +22,7 @@
 						</li>
 						<li {{ Request::is('study') ? ' class=active' : '' }}><a href="/study">Учеба</a></li>
 						<li {{ Request::is('gallery') ? ' class=active' : '' }}><a href="/gallery">Фотоальбом</a></li>
+						<li {{ Request::is('feedback') ? ' class=active' : '' }}><a href="/feedback">Обратная связь</a></li>
 					</ul>
 
 					@include('auth')

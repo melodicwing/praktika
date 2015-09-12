@@ -83,7 +83,7 @@
 							$('#div_register_name').removeClass('has-error').addClass('has-feedback has-success').find('span').remove();
 							$('#div_register_name').append(glyph);
 							break;
-						case 'duplicate':
+						case 'duplicate': case 'empty':
 							var glyph = $('<span>').addClass('glyphicon glyphicon-remove form-control-feedback');
 							$('#div_register_name').removeClass('has-success').addClass('has-feedback has-error').find('span').remove();
 							$('#div_register_name').append(glyph);
