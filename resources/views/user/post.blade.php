@@ -4,6 +4,7 @@
 	<div class='row center-block'>
 		<div class='col-xs-12 text-center'>
 			<h2>{{ $post[0]->title }}</h2>
+			<p>{{ $post[0]->dateTime }}</p>
 			<p>{{ $post[0]->text }}</p>
 			@if($post[0]->path_to_img)
 				<p>

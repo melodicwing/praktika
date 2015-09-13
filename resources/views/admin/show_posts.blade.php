@@ -70,6 +70,7 @@
 			mouseWheel: true,
 			arrows: true
 		});
+		
 		var edit_post_id;
 		$('.link_edit').click(function(e){
 			edit_post_id = $(this).attr('id').replace(/link_edit_/,'');
