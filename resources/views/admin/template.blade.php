@@ -9,7 +9,7 @@
 				<div>
 					<ul class="nav navbar-nav">
 						<li {{ Request::is('/') ? ' class=active' : '' }}><a href="/">На основной сайт</a></li>
-						<li {{ Request::is('about_me') ? ' class=active' : '' }}><a href="/about_me">Обо мне</a></li>
+						<li {{ Request::is('admin/hits') ? ' class=active' : '' }}><a href="/admin/hits">Статистика посещений</a></li>
 						<li><a href="#">Page 2</a></li>
 						<li><a href="#">Page 3</a></li>
 					</ul>
