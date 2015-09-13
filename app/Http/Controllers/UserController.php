@@ -127,13 +127,16 @@ class UserController extends Controller
 
 	function guestbook()
 	{
-		return view('user/guestbook');
+		$guestbook_messages = Guestbook::all();
+		//return json_encode($guestbook_messages);
+		return view('user/guestbook', [ 'guestbook_messages' => $guestbook_messages ] );
 	}
 
 	function guestbook_add(Request $request)
 	{
 		$input = $request->all();
 		Guestbook::insert($input);
+		return redirect('/guestbook');
 		//return exec('whoami');
 		return view('user/guestbook');
 	}
