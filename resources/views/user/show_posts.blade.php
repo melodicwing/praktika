@@ -6,7 +6,7 @@
 <div class="row center-block">
 		@endif
 		<div class="col-xs-4">
-			<h3>{{ $row->title }}</h3>
+			<a href='/post/{{ $row->id }}'><h3>{{ $row->title }}</h3></a>
 			<p><small>{{ $row->dateTime }}</small></p>
 			@if($row->path_to_img)
 				<p>

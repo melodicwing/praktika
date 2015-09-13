@@ -146,10 +146,15 @@ class UserController extends Controller
 		return view('user/guestbook');
 	}
 
-	function blog(Request $request)
+	function blog($id = false)
 	{
 		$posts = Post::all();
-
 		return view('user/blog', [ 'posts' => $posts ]);
+	}
+
+	function post($id = false)
+	{
+		$post = Post::where('id', $id)->get();
+		return view('user/post', [ 'post' => $post ]);
 	}
 }

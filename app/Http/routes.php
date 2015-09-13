@@ -60,6 +60,7 @@ Route::get('guestbook', 'UserController@guestbook');
 Route::post('guestbook', 'UserController@guestbook_add');
 
 Route::get('blog', 'UserController@blog');
+Route::get('post/{id}', 'UserController@post');
 
 Route::get('test', function(){
 	return var_export(json_decode(''),true);
