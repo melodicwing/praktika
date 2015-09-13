@@ -6,6 +6,7 @@ use Auth;
 use App\User;
 use App\Http\Models\TestResult;
 use App\Http\Models\Hit;
+use App\Http\Models\Guestbook;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator;
@@ -132,7 +133,8 @@ class UserController extends Controller
 	function guestbook_add(Request $request)
 	{
 		$input = $request->all();
-		return $_SERVER['DOCUMENT_ROOT'];
-		return var_export($input,true);
+		Guestbook::insert($input);
+		//return exec('whoami');
+		return view('user/guestbook');
 	}
 }
