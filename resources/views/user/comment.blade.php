@@ -31,7 +31,38 @@
 			success: function(data) {
 				$('#textarea_comment_text').val('');
 				console.log('comment ajax success');
+				data = $.parseJSON(data);
+				console.log(data['user']);
+				console.log(data['dateTime']);
+				console.log(data['text']);
+				var user = $('<h4>').text(data['user']);
+				var dateTime = $('<h6>').text(data['dateTime']);
+				var text = $('<p>').text(data['text']);
+				var div = $('<div>')
+					.attr('class','center-block')
+					.css('width', '30%')
+					.append(user)
+					.append(dateTime)
+					.append(text)
+					.append($('<br>'));
+				$('#div_comments').append(div).css('display', 'block');
 			}
 		});
 	});
 </script>
+
+@if( isset($comments) && $comments )
+	<div id='div_comments' class='row' style='display:block;'>
+		@foreach($comments as $row)
+			<div class='center-block' style='width:30%'>
+				<h4>{{ $row['user'] }}</h4>
+				<h6>{{ $row['dateTime'] }}</h6>
+				<p>{{ $row['text'] }}</p>
+			</div>
+			<br>
+		@endforeach
+	</div>
+@else
+	<div id='div_comments' class='row' style='display:none'>
+	</div>
+@endif

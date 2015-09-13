@@ -156,7 +156,8 @@ class UserController extends Controller
 	function post($id = false)
 	{
 		$post = Post::where('id', $id)->get();
-		return view('user/post', [ 'post' => $post ]);
+		$comments = Comment::comments($id);
+		return view('user/post', [ 'post' => $post, 'comments' => $comments ]);
 	}
 
 	function comment_add(Request $request, $id)
@@ -166,7 +167,7 @@ class UserController extends Controller
           ->update(['delayed' => 1]);
           $deletedRows = App\Flight::where('active', 0)->delete();*/
 		$input = $request->input('text');
-		Comment::insert($id, $input);
+		return json_encode(Comment::insert($id, $input));
 		//return 'sas';
 	}
 }

@@ -83,4 +83,5 @@
 			});
 		});
 	</script>
+	@include('user/comment')
 @endsection

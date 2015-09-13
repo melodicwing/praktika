@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Models\Hit;
 use App\Http\Models\Guestbook;
 use App\Http\Models\Post;
+use App\Http\Models\Comment;
 use Illuminate\Http\Request;
 
 class Admin extends Controller
@@ -48,7 +49,8 @@ class Admin extends Controller
 	function post($id = false)
 	{
 		$post = Post::where('id', $id)->get();
-		return view('admin/post', [ 'post' => $post ]);
+		$comments = Comment::comments($id);
+		return view('admin/post', [ 'post' => $post, 'comments' => $comments ]);
 	}
 
 	function post_edit(Request $request, $id = false)
