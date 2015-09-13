@@ -76,7 +76,8 @@ function init_all() {
 		initTime();
 
 		//сохраняем в sessionStorage
-		var page_name = location.pathname.substring(location.pathname.lastIndexOf("/") + 1)
+		var page_name = location.pathname.substring(1).replace(/\//g,'_');
+		//console.log('page_name '+page_name);
 		if (!page_name) {
 			page_name = 'index';
 		}
@@ -135,7 +136,7 @@ function setCookie(name, value, options) {
  options.expires=date.toUTCString();
 
   //console.log(options);
-
+options.path='/';
   value = encodeURIComponent(value);
 
   var updatedCookie = name + "=" + value;
@@ -147,6 +148,8 @@ function setCookie(name, value, options) {
 	  updatedCookie += "=" + propValue;
 	}
   }
+
+  console.log('updated cookie '+updatedCookie);
 
   document.cookie = updatedCookie;
 }

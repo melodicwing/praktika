@@ -66,6 +66,8 @@ Route::get('blog', 'UserController@blog');
 
 Route::get('post/{id}', 'UserController@post');
 
+Route::post('post/{id}/comment/add', 'UserController@comment_add');
+
 Route::get('test', function(){
 	return var_export(json_decode(''),true);
 });

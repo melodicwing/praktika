@@ -8,6 +8,7 @@ use App\Http\Models\TestResult;
 use App\Http\Models\Hit;
 use App\Http\Models\Guestbook;
 use App\Http\Models\Post;
+use App\Http\Models\Comment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator;
@@ -102,7 +103,7 @@ class UserController extends Controller
 				'link' => '/study',
 				'name' => 'Учеба',
 			),
-			'test' => array(
+			'study_test' => array(
 				'link' => '/study/test',
 				'name' => 'Тест',
 			),
@@ -156,5 +157,16 @@ class UserController extends Controller
 	{
 		$post = Post::where('id', $id)->get();
 		return view('user/post', [ 'post' => $post ]);
+	}
+
+	function comment_add(Request $request, $id)
+	{
+		/*App\Flight::where('active', 1)
+          ->where('destination', 'San Diego')
+          ->update(['delayed' => 1]);
+          $deletedRows = App\Flight::where('active', 0)->delete();*/
+		$input = $request->input('text');
+		Comment::insert($id, $input);
+		//return 'sas';
 	}
 }
