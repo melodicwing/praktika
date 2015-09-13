@@ -25,6 +25,7 @@
 						<li {{ Request::is('feedback') ? ' class=active' : '' }}><a href="/feedback">Обратная связь</a></li>
 						<li {{ Request::is('history') ? ' class=active' : '' }}><a href="/history">История</a></li>
 						<li {{ Request::is('guestbook') ? ' class=active' : '' }}><a href="/guestbook">Гостевая книга</a></li>
+						<li {{ Request::is('blog') ? ' class=active' : '' }}><a href="/blog">Блог</a></li>
 					</ul>
 
 					@include('auth')

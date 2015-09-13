@@ -7,6 +7,7 @@ use App\User;
 use App\Http\Models\TestResult;
 use App\Http\Models\Hit;
 use App\Http\Models\Guestbook;
+use App\Http\Models\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator;
@@ -121,6 +122,10 @@ class UserController extends Controller
 				'link' => '/guestbook',
 				'name' => 'Гостевая книга',
 			),
+			'blog' => array(
+				'link' => '/blog',
+				'name' => 'Блог',
+			),
 		);
 		return view('user/history', [ 'pages' => $pages ]);
 	}
@@ -139,5 +144,12 @@ class UserController extends Controller
 		return redirect('/guestbook');
 		//return exec('whoami');
 		return view('user/guestbook');
+	}
+
+	function blog(Request $request)
+	{
+		$posts = Post::all();
+
+		return view('user/blog', [ 'posts' => $posts ]);
 	}
 }

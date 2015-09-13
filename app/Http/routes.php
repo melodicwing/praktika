@@ -30,9 +30,14 @@ Route::post('ajax/check_login', 'Ajax@check_login');
 
 Route::group(['middleware' => 'routeadmin'], function(){
 	Route::get('admin', 'Admin@index');
+	
 	Route::get('admin/hits', 'Admin@hits');
+	
 	Route::get('admin/guestbook', 'Admin@guestbook');
 	Route::post('admin/guestbook', 'Admin@guestbook');
+	
+	Route::get('admin/blog', 'Admin@blog');
+	Route::post('admin/blog', 'Admin@blog');
 });
 
 Route::get('interests', 'UserController@interests');
@@ -53,6 +58,8 @@ Route::get('history', 'UserController@history');
 Route::get('guestbook', 'UserController@guestbook');
 
 Route::post('guestbook', 'UserController@guestbook_add');
+
+Route::get('blog', 'UserController@blog');
 
 Route::get('test', function(){
 	return var_export(json_decode(''),true);

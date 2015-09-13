@@ -11,6 +11,7 @@
 						<li {{ Request::is('/') ? ' class=active' : '' }}><a href="/">На основной сайт</a></li>
 						<li {{ Request::is('admin/hits') ? ' class=active' : '' }}><a href="/admin/hits">Статистика посещений</a></li>
 						<li {{ Request::is('admin/guestbook') ? ' class=active' : '' }}><a href="/admin/guestbook">Гостевая книга</a></li>
+						<li {{ Request::is('admin/blog') ? ' class=active' : '' }}><a href="/admin/blog">Блог</a></li>
 					</ul>
 
 					@include('auth')
