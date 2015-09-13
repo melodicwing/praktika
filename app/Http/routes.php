@@ -31,6 +31,8 @@ Route::post('ajax/check_login', 'Ajax@check_login');
 Route::group(['middleware' => 'routeadmin'], function(){
 	Route::get('admin', 'Admin@index');
 	Route::get('admin/hits', 'Admin@hits');
+	Route::get('admin/guestbook', 'Admin@guestbook');
+	Route::post('admin/guestbook', 'Admin@guestbook');
 });
 
 Route::get('interests', 'UserController@interests');

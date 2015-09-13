@@ -1,6 +1,10 @@
 @extends('template')
 
 @section('content')
+	<div class=''>
+		<h2>История</h2>
+	</div>
+	<br>
 	<table class='table table-striped table-condensed'>
 		<tr>
 			<th rowspan="2"></th>

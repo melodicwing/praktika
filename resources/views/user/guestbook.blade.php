@@ -35,7 +35,7 @@
 			</div>
 		</div>
 	</form>
-	@if ( isset($guestbook_messages) )
+	@if ( isset($guestbook_messages) and $guestbook_messages )
 		@include('user/show_guestbook_messages')
 	@endif
 @endsection
