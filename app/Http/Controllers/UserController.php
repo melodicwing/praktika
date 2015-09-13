@@ -116,7 +116,23 @@ class UserController extends Controller
 				'link' => '/history',
 				'name' => 'История',
 			),
+			'guestbook' => array(
+				'link' => '/guestbook',
+				'name' => 'Гостевая книга',
+			),
 		);
 		return view('user/history', [ 'pages' => $pages ]);
+	}
+
+	function guestbook()
+	{
+		return view('user/guestbook');
+	}
+
+	function guestbook_add(Request $request)
+	{
+		$input = $request->all();
+		return $_SERVER['DOCUMENT_ROOT'];
+		return var_export($input,true);
 	}
 }

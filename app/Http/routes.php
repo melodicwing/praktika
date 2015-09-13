@@ -47,3 +47,8 @@ Route::get('gallery', 'UserController@gallery');
 Route::get('feedback', 'UserController@feedback');
 
 Route::get('history', 'UserController@history');
+
+Route::get('guestbook', 'UserController@guestbook');
+
+Route::post('guestbook', 'UserController@guestbook_add');
+
