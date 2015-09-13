@@ -38,6 +38,9 @@ Route::group(['middleware' => 'routeadmin'], function(){
 	
 	Route::get('admin/blog', 'Admin@blog');
 	Route::post('admin/blog', 'Admin@blog');
+
+	Route::get('admin/post/{id}', 'Admin@post');
+	Route::post('admin/post/{id}/edit', 'Admin@post_edit');
 });
 
 Route::get('interests', 'UserController@interests');
@@ -60,6 +63,7 @@ Route::get('guestbook', 'UserController@guestbook');
 Route::post('guestbook', 'UserController@guestbook_add');
 
 Route::get('blog', 'UserController@blog');
+
 Route::get('post/{id}', 'UserController@post');
 
 Route::get('test', function(){

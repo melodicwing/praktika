@@ -44,4 +44,19 @@ class Admin extends Controller
 
 		return view('admin/blog', [ 'posts' => $posts ]);
 	}
+
+	function post($id = false)
+	{
+		$post = Post::where('id', $id)->get();
+		return view('admin/post', [ 'post' => $post ]);
+	}
+
+	function post_edit(Request $request, $id = false)
+	{
+		$input = $request->input('text');
+		$post = Post::where('id', $id)->get();
+		$post[0]->text = $input;
+		$post[0]->save();
+		return $post[0]->text;
+	}
 }
